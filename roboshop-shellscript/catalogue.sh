@@ -7,7 +7,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-MONGODB_HOST=mongodb.devsaibabu.site:27017
+MONGODB_HOST=mongodb.devsaibabu.site
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
@@ -98,6 +98,6 @@ yum install -y mongodb-org-shell &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB Client"
 
-mongosh --host $MONGODB_HOST </app/schema/catalogue.js  &>> $LOGFILE
+mongosh --host mongodb.devsaibabu.site </app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Loading Catalogue data into MongoDB"
