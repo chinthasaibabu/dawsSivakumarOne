@@ -96,10 +96,6 @@ VALIDATE $? "Copying Mongo Repo"
 #yum install mongodb-org-shell -y  &>> $LOGFILE
 yum install -y mongodb-org-shell &>> $LOGFILE 
 
-yum install -y libcurl libcrypt
-
-#dnf install mongodb-org-shell -y &>> $LOGFILE
-
 VALIDATE $? "Installing MongoDB Client"
 
 mongosh --host $MONGODB_HOST </app/schema/catalogue.js  &>> $LOGFILE
