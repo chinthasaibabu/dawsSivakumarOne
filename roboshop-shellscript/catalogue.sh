@@ -98,6 +98,6 @@ yum install -y mongodb-org-shell &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB Client"
 
-mongosh --host mongodb.devsaibabu.site </app/schema/catalogue.js  &>> $LOGFILE
+mongo --host mongodb.devsaibabu.site </app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Loading Catalogue data into MongoDB"
