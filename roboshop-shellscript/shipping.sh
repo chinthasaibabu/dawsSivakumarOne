@@ -49,24 +49,48 @@ VALIDATE $? "Creating app directory"
 
 curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.zip
 
+VALIDATE $? "Download Shipping"
+
 cd /app
+
+VALIDATE $? "Moving to app directory"
 
 unzip -o /tmp/shipping.zip
 
+VALIDATE $? "Unzipping shipping"
+
 mvn clean package
+
+VALIDATE $? "Installing dependecies"
 
 mv target/shipping-1.0.jar shipping.jar
 
+VALIDATE $? "Renaminf JAR file"
+
 cp /home/centos/dawsSivakumarOne/roboshop-shellscript/shipping.service /etc/systemd/system/shipping.service &>> $LOGFILE
+
+VALIDATE $? "Copying shipping service"
 
 systemctl daemon-reload
 
+VALIDATE $? "daemon reload"
+
 systemctl enable shipping
+
+VALIDATE $? "enable shipping"
 
 systemctl start shipping
 
-dnf install mysql -y
+VALIDATE $? "start shipping"
 
-mysql -h mysql.devsaibabu.site -uroot -pRoboShop@1 < /app/schema/shipping.sql 
+dnf install mysql -y &>> $LOGFILE
+
+VALIDATE $? "Installing mySQL client"
+
+mysql -h mysql.devsaibabu.site -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+
+VALIDATE $? "Shipping Data"
 
 systemctl restart shipping
+
+VALIDATE $? "Restart Shipping"
