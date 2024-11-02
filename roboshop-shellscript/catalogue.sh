@@ -94,7 +94,9 @@ cp /home/centos/dawsSivakumarOne/roboshop-shellscript/mongo.repo /etc/yum.repos.
 VALIDATE $? "Copying Mongo Repo"
 
 #yum install mongodb-org-shell -y  &>> $LOGFILE
-dnf install -y mongodb-org-shell &>> $LOGFILE 
+yum install -y mongodb-org-shell &>> $LOGFILE 
+
+yum install -y libcurl libcrypt
 
 #dnf install mongodb-org-shell -y &>> $LOGFILE
 
