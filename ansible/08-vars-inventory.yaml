@@ -1,6 +1,6 @@
 - name: Variable for PLAY Level
   hosts: localhost
   tasks: 
-  - name: check variable
-    ansible.builtin.debug:
-      msg: "Hi I am {{Course}} {{Trainer}} {{Duration}} is 110 Hrs"
+    - name: check variable
+      ansible.builtin.debug:
+        msg: "Hi, I am {{ Course }} taught by {{ Trainer }} for a duration of {{ Duration }}."
