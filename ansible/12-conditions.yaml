@@ -1,0 +1,11 @@
+- name: conditions
+  hosts: localhost
+  tasks:
+  - name: check roboshop user exist or not
+    ansible.buitlin.command: id roboshop
+    register: user #user is a variable name
+    ignore-errors: true
+
+  - name: print variable value
+    ansible.builtin.debug:
+      msg: "User output is: {{user}}"
