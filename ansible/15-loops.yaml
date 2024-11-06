@@ -6,8 +6,8 @@
     ansible.builtin.package:
       name: "{{item.name}}" 
       state: "{{item.state}}"
-    loop:#item
-    - {name: 'git',state: 'present'}
+    loop:
+    - {name: 'git',state: 'present'} #item
     - {name: 'mysql',state: 'absent'}  
     - {name: 'postfix',state: 'absent'}
     - {name: 'nginx',state: 'present'}
