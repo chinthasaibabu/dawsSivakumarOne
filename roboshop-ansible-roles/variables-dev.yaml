@@ -1,0 +1,10 @@
+MONGODB_HOST: mongodb-dev.devsaibabu.site  # submit your host
+REDIS_HOST: redis-dev.devsaibabu.site 
+MYSQL_HOST: mysql-dev.devsaibabu.site 
+RABBITMQ_HOST: rabbitmq-dev.devsaibabu.site 
+CATALOGUE_HOST: catalogue-dev.devsaibabu.site 
+USER_HOST: user-dev.devsaibabu.site 
+CART_HOST: cart-dev.devsaibabu.site 
+SHIPPING_HOST: shipping-dev.devsaibabu.site 
+PAYMENT_HOST: payment-dev.devsaibabu.site 
+DISPATCH_HOST: dispatch-dev.devsaibabu.site 
